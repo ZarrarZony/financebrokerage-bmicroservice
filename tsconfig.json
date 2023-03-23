@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ESNext",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "outDir": "dist",
+    "lib": ["DOM"],
+    "rootDir": "src",
+    "strict": true
+  },
+  "exclude": ["node_modules", "dist", "prisma"],
+  "ts-node": {
+    "esm": true
+  }
+}

@@ -1,0 +1,44 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  @@map("category")
+  id         Int      @id @default(autoincrement())
+  name       String   @db.VarChar(255)
+  //removed
+  //removed
+  image      String?
+  createdAt  DateTime @default(now()) @map("created_at")
+  posts      Post[]
+}
+
+model Post {
+  @@map("post")
+  id           Int      @id @default(autoincrement())
+  //removed
+  //removed
+  //removed
+  complete     Boolean? @default(false)
+  image        String?
+  createdAt    DateTime @default(now()) @map("created_at")
+  translations Translation[]
+}
+
+model Translation {
+// removed
+}
+
+model FailedSynced {
+  @@map("failed_synced")
+  id                 Int      @id @default(autoincrement())
+ //removed
+ //removed
+  updatedAt          DateTime @default(now()) @map("update_at")
+  translations        Translation[]
+}
